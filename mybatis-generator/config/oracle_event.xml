@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<classPathEntry location="C:/Users/wangta/work/code/hainan\gaosu/sourceCode/mybatis-generator/lib/ojdbc6.jar" />
+	<!-- <context id="Ibatis2Java5" targetRuntime="Ibatis2Java5">
+		<plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+		<plugin type="org.mybatis.generator.plugins.AnnotationPlugin" />
+		<plugin type="org.mybatis.generator.plugins.IbatisCriteriaPlugin" />
+		<plugin type="org.mybatis.generator.plugins.IbatisServicePlugin">
+			<property name="targetPackage" value="oracleibatis2.service" />
+			<property name="implementationPackage" value="oracleibatis2.service.impl" />
+			<property name="targetProject" value="../mybatis-generator-test/src" />
+			<property name="enableInsert" value="true" />
+			<property name="enableUpdateByParamsSelective" value="true" />
+			<property name="enableInsertSelective" value="true" />
+			<property name="enableUpdateByPrimaryKey" value="true" />
+			<property name="enableDeleteByPrimaryKey" value="true" />
+			<property name="enableDeleteByParams" value="true" />
+			<property name="enableUpdateByPrimaryKeySelective" value="true" />
+			<property name="enableUpdateByParams" value="true" />
+		</plugin>
+		<jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver" connectionURL="jdbc:oracle:thin:@localhost:1521:XE"
+			userId="spring_mvc" password="spring_mvc">
+		</jdbcConnection>
+		
+		<javaModelGenerator targetPackage="oracleibatis2.pojo" targetProject="../mybatis-generator-test/src">
+		</javaModelGenerator>
+
+		<sqlMapGenerator targetPackage="oracleibatis2.sqlmap" targetProject="../mybatis-generator-test/src">
+		</sqlMapGenerator>
+
+		<javaClientGenerator type="SPRING" targetPackage="oracleibatis2.dao"
+			targetProject="../mybatis-generator-test/src">
+		</javaClientGenerator>
+
+		<table tableName="BASE_FIELDS" schema="spring_mvc">
+			<property name="ignoreQualifiersAtRuntime" value="true" />
+			<property name="runtimeTableName" value="BASE_FIELDS" />
+			<generatedKey column="id" sqlStatement="select SEQ_BASE_FIELDS.NEXTVAL from dual" />
+		</table>
+	</context> -->
+	
+	
+	<context id="MyBatis3" targetRuntime="MyBatis3">
+		<plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+		<plugin type="org.mybatis.generator.plugins.MybatisCriteriaPlugin" />
+		<plugin type="org.mybatis.generator.plugins.MybatisServicePlugin">
+			<property name="targetPackage" value="cn.gov.hnjt.gs.trafficevent.service" />
+			<property name="implementationPackage" value="cn.gov.hnjt.gs.trafficevent.service.impl" />
+			<property name="targetProject" value="../mybatis-generator-test/src" />
+			<property name="enableInsert" value="true" />
+			<property name="enableUpdateByParamsSelective" value="true" />
+			<property name="enableInsertSelective" value="true" />
+			<property name="enableUpdateByPrimaryKey" value="true" />
+			<property name="enableDeleteByPrimaryKey" value="true" />
+			<property name="enableDeleteByParams" value="true" />
+			<property name="enableUpdateByPrimaryKeySelective" value="true" />
+			<property name="enableUpdateByParams" value="true" />
+		</plugin>
+<!-- 		<jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver" connectionURL="jdbc:oracle:thin:@220.174.232.4:1521:HNITS"
+			userId="yj_demo" password="yj_demo">
+		</jdbcConnection> -->
+		<jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver" connectionURL="jdbc:oracle:thin:@220.174.232.4:1521:HNITS"
+			userId="hnjt_gs" password="123456">
+		</jdbcConnection>
+		<javaModelGenerator targetPackage="cn.gov.hnjt.gs.trafficevent.pojo" targetProject="../mybatis-generator-test/src">
+		</javaModelGenerator>
+
+		<sqlMapGenerator targetPackage="cn.gov.hnjt.gs.trafficevent.dao" targetProject="../mybatis-generator-test/src">
+		</sqlMapGenerator>
+
+		<javaClientGenerator type="XMLMAPPER" targetPackage="cn.gov.hnjt.gs.trafficevent.dao" targetProject="../mybatis-generator-test/src">
+		</javaClientGenerator>
+
+
+		<table tableName="TRAFFIC_EVENT" schema="hnjt_gs">
+			<property name="ignoreQualifiersAtRuntime" value="true" />
+			<property name="runtimeTableName" value="EVENT_SYNC" />
+			<generatedKey column="EVENT_SID" sqlStatement="select SEQ_TRAFFIC_EVENT.NEXTVAL from dual" />
+		</table>
+		<table tableName="TRAFFIC_EVENT_INF" schema="hnjt_gs">
+			<property name="ignoreQualifiersAtRuntime" value="true" />
+			<property name="runtimeTableName" value="EVENT_INF" />
+			<generatedKey column="EVENTID" sqlStatement="select SEQ_TRAFFIC_EVENT_INF.NEXTVAL from dual" />
+		</table>
+		<table tableName="TRAFFIC_EVENT_PUBLISH" schema="hnjt_gs">
+			<property name="ignoreQualifiersAtRuntime" value="true" />
+			<property name="runtimeTableName" value="EVENT_PUBLISH" />
+			<generatedKey column="PUB_SID" sqlStatement="select SEQ_TRAFFIC_EVENT_PUBLISH.NEXTVAL from dual" />
+		</table>
+	</context>
+</generatorConfiguration>
